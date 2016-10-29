@@ -1,0 +1,42 @@
+/* Global Variables */
+@import './variables';
+@import './utilities';
+
+/* Bootstrap with Customized Colors */
+@import './bootstrap_overrides';
+
+body {
+  color: rgba($text-primary, .9);
+  background-color: $light-grey;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  font-family: $font-family--primary;
+  font-size: em(22px);
+  line-height: em(28px, $base--line);
+}
+/* App Content Wrapper */
+.content-wrapper {
+  margin: 0 auto;
+  @include media-break(medium) {
+    max-width: 768px;
+  }
+  @include media-break(large) {
+    max-width: 1024px;
+    h3 {
+      font-weight: 700;
+      font-family: $font-family--secondary;
+      line-height: ($base--line/$base--font-size);
+    }
+    p {
+      font-family: $font-family--primary;
+      font-size: em(16px);
+      line-height: em(22px);
+      font-weight: 100;
+    }
+    @media only screen and (min-width: 768px) {
+      p {
+        font-size: em(18px);
+      }
+    }
+  }
+}

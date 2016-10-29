@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+@import '../../styles/utilities';
+
+.home-page {
+  .jumbotron {
+    text-align: center;
+    svg {
+      padding: 0;
+      > .st0 {
+        fill: black;
+      }
+    }
+  }
+  .footer {
+    max-width: 768px;
+    padding: 10px 45px;
+    margin: 0 auto;
+  }
+}

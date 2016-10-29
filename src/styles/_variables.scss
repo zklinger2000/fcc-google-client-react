@@ -1,0 +1,83 @@
+//===============
+// Global Config
+//===============
+
+/**
+ *  Define scss variables here.
+ *
+ *  Available options for Bootstrap:
+ *  http://getbootstrap.com/customize/
+ *
+ */
+
+
+//====================
+// Descriptive Colors
+//====================
+
+/* Bootswatch Yeti */
+$bondi-blue     : #008cba;
+$chateau-green  : #43ac6a;
+$scooter        : #31b0d5;
+$pirate-gold    : #b67102;
+$pomegranate    : #f04124;
+
+/* Base Colors */
+$black          : #000000;
+$white          : #ffffff;
+$grey           : #797e83;
+$light-grey     : #8f8f8f;
+$dark-grey      : #424242;
+
+/* Custom Theme Colors */
+$steel-blue     : #4682B4;
+$color-accent   : $pomegranate;
+
+/* Shadows */
+$text-shadow    : rgba(0,0,0,0.4);
+$box-shadow     : rgba(0,0,0,0.2);
+
+
+//=============
+// Font Stacks
+//=============
+
+/* Droid Sans */
+$font-family-droid-sans     : 'Droid Sans', sans-serif;
+$font-url--droid-sans       : 'https://fonts.googleapis.com/css?family=Droid+Sans:400,700';
+@import url($font-url--droid-sans);
+
+/* Didact Gothic */
+$font-family-didact-gothic  : 'Didact Gothic', sans-serif;
+$font-url--didact-gothic    : 'https://fonts.googleapis.com/css?family=Didact+Gothic';
+@import url($font-url--didact-gothic);
+
+/* Oswald */
+$font-family-oswald         : 'Oswald', sans-serif;
+$font-url--oswald           : 'https://fonts.googleapis.com/css?family=Oswald:100,400,700';
+@import url($font-url--oswald);
+
+/* Slabo 13px */
+$font-family-slabo-13       : 'Slabo 13px', sans-serif;
+$font-url--slabo-13         : 'https://fonts.googleapis.com/css?family=Slabo+13px';
+@import url($font-url--slabo-13);
+
+/* San Serif fallback */
+$font-family-sans-serif     : "Helvetica Neue", Helvetica, sans-serif;
+
+/* Main Font Families */
+$font-family--primary       : $font-family-droid-sans;
+$font-family--secondary     : $font-family-oswald;
+$font-family--blog          : $font-family-slabo-13;
+
+/* Text Sizes */
+$base--font-size  : 14px;
+$base--line       : 20px;
+
+/* Text Colors */
+$text-primary     : $black;
+$text-secondary   : $white;
+
+/* Misc */
+$header-h-sm      : 51px;
+$header-h-md      : 63px;

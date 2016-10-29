@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.navbar {
+  &.navbar-inverse {
+    background: linear-gradient( 180deg, #222 30%, $black );
+  }
+  .container-fluid {
+    max-width: 1024px;
+  }
+}
+.navbar-collapse{
+  margin-right: 10px;
+  margin-left: 10px;
+  max-height: 500px !important;
+  transition: max-height 0.2s ease-out !important;
+  &.collapsing {
+    height: 100% !important;
+    max-height: 0 !important;
+    transition: max-height 0.2s ease-in !important;
+  }
+}
+.navbar-inverse .navbar-nav > li > button {
+  margin: 8px auto 0;
+  position: relative;
+  display: block;
+}
+.navbar-inverse .navbar-nav > li > a {
+  text-align: center;
+  margin: auto;
+}
+.navbar-inverse .navbar-nav > li > a.projects-nav {
+  color: $black;
+  background: $pomegranate;
+}
+.navbar-inverse .navbar-nav > li > a.projects-nav:hover {
+  color: $white;
+  background: $pomegranate;
+}
+.navbar-inverse .navbar-nav > li > a.projects-nav:focus,
+.navbar-inverse .navbar-nav > li > a.projects-nav.active {
+  color: $white;
+  background: darken($pomegranate, 10);
+}
+p.navbar-text {
+  margin-top: 14px;
+  margin-bottom: 13px;
+}
+.lg-hidden {
+  @media only screen and (min-width: 768px) {
+    opacity: 0;
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms;
+    -ms-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+  }
+}

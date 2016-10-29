@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.not-found-page {
+  //width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - #{$header-h-sm});
+  color: $pomegranate;
+  text-align: center;
+  @media only screen and (min-width: 768px) {
+    height: calc(100vh - #{$header-h-md});
+  }
+}
