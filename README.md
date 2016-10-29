@@ -1,4 +1,5 @@
-# react-slingshot-zklinger
+# fcc-google-client-react
+> built on [https://github.com/coryhouse/react-slingshot](https://github.com/coryhouse/react-slingshot)
 ## React-Redux Web Client with Sass, DevTools and Mocha Testing, served by Webpack
 
 [![Build status: Linux](https://img.shields.io/travis/coryhouse/react-slingshot.svg?style=flat-square)](https://travis-ci.org/coryhouse/react-slingshot)
