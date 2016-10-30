@@ -9,8 +9,7 @@ import configureStore from './store/configureStore';
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS files too! Webpack will run the associated loader and plug this into the page.
 import { syncHistoryWithStore } from 'react-router-redux';
-import { AUTH_USER } from './constants/actionTypes';
-import '../node_modules/toastr/build/toastr.min.css';
+import { AUTH_GOOGLE_SUCCESS } from './constants/actionTypes';
 
 const store = configureStore();
 
@@ -24,7 +23,7 @@ const userName = localStorage.getItem('user_name');
 if (userToken) {
   // Update application state on page load
   store.dispatch({
-    type: AUTH_USER,
+    type: AUTH_GOOGLE_SUCCESS,
     payload: {
       user: {
         name: userName

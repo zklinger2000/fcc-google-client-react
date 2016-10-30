@@ -1,16 +1,38 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 import {
-  AUTH_USER,
-  AUTH_ERROR,
-  UNAUTH_USER,
-  FETCH_MESSAGE
+  AUTH_GOOGLE_REQUEST,
+  AUTH_GOOGLE_SUCCESS,
+  AUTH_GOOGLE_ERROR,
+  AUTH_GOOGLE_LOGOUT,
+  AUTH_GOOGLE_CANCEL,
+  AUTH_GOOGLE_FETCH_MESSAGE
 } from '../constants/actionTypes';
 // import  from '../../config';
 
+// TODO: Perfect opportunity to use 'loading...' UX's for slow AJAX calls from fcc-google-api server
 // TODO: Add heroku address
-const API_URL = 'https://fcc-google-api.herokuapp.com/api';
-// const API_URL = 'http://localhost:8050/api';
+// const API_URL = 'https://fcc-google-api.herokuapp.com/api';
+const API_URL = 'http://localhost:8050/api';
+
+export function authGoogleRequest() {
+  return function(dispatch) {
+    dispatch({
+      type: AUTH_GOOGLE_REQUEST,
+      payload: { // not hooked up right now
+        timestamp: Date.now()
+      }
+    });
+  };
+}
+
+export function authGoogleCancel() {
+  return function(dispatch) {
+    dispatch({
+      type: AUTH_GOOGLE_CANCEL
+    });
+  };
+}
 
 export function authGoogleLogin(response) {
   return function(dispatch) {
@@ -21,7 +43,7 @@ export function authGoogleLogin(response) {
         // Update state to indicate user is authenticated
         // console.log(response.data);
         dispatch({
-          type: AUTH_USER,
+          type: AUTH_GOOGLE_SUCCESS,
           payload: {
             user: response.data.user
           }
@@ -42,8 +64,9 @@ export function authGoogleLogin(response) {
 }
 
 export function authError(error) {
+  console.warn('error', error);
   return {
-    type: AUTH_ERROR,
+    type: AUTH_GOOGLE_ERROR,
     payload: error
   };
 }
@@ -53,10 +76,10 @@ export function logoutUser() {
   localStorage.removeItem('user_token');
   localStorage.removeItem('user_name');
   return {
-    type: UNAUTH_USER
+    type: AUTH_GOOGLE_LOGOUT
   };
 }
-
+// AJAX call for a secure resource
 export function fetchMessage() {
   return function(dispatch) {
     axios.get(API_URL, {
@@ -64,7 +87,7 @@ export function fetchMessage() {
     })
       .then(response => {
         dispatch({
-          type: FETCH_MESSAGE,
+          type: AUTH_GOOGLE_FETCH_MESSAGE,
           payload: response.data.message
         });
       });

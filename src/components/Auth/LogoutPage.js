@@ -5,7 +5,7 @@ import React, {
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import * as actions from '../../actions/authentication';
+import * as actions from '../../actions/auth.actions';
 
 class LogoutPage extends Component {
   componentWillMount() {

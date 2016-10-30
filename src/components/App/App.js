@@ -5,6 +5,7 @@ import React, {
 import { connect } from 'react-redux';
 import pathHelper from '../../utils/pathHelper';
 import Header from '../Header/Header';
+import LoginModal from '../Auth/LoginModal';
 
 class App extends Component {
   render() {
@@ -13,10 +14,12 @@ class App extends Component {
     return (
       <div>
         <Header pathname={path}/>
-        {/*<Wallpaper themes={[{name: 'home'}]} current={{name: path}} />*/}
+
         <div className="content-wrapper">
           {this.props.children}
         </div>
+
+        <LoginModal isLoggingIn={this.props.isLoggingIn}/>
       </div>
     );
   }
@@ -24,11 +27,13 @@ class App extends Component {
 
 App.propTypes = {
   children: PropTypes.element,
+  isLoggingIn: PropTypes.bool.isRequired,
   location: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state, ownProps) {
   return {
+    isLoggingIn: state.auth.isLoggingIn,
     location: ownProps.location
   };
 }
