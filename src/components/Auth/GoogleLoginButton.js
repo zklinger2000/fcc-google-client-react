@@ -8,17 +8,14 @@ import GoogleLogin from 'react-google-login';
 import config from '../../../config';
 
 class GoogleLoginButton extends Component {
-  // TODO: write requestGoogleLogin method
-  // TODO: write handleGoogleError method
-  handleGoogleError(response) {
-    console.error(response);
-    this.props.authError(response);
-  }
 
   handleGoogleSuccess(response) {
     // Start Google Oauth process
-    console.info(response);
     this.props.authGoogleLogin(response);
+  }
+
+  handleGoogleError(response) {
+    this.props.authError(response);
   }
 
   render() {

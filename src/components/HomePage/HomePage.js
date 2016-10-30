@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import './HomePage.scss';
 import FccSVG from '../FccSVG/FccSVG';
 
-// TODO: Create a server.js file to serve app from 'dist/' like on portfolio site when on Heroku
 const HomePage = () => {
   return (
     <div className="home-page">

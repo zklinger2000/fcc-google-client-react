@@ -1,7 +1,7 @@
 {
-  "name": "zklinger-client",
+  "name": "fcc-google-client-react",
   "version": "0.1.0",
-  "description": "Portfolio Website",
+  "description": "A React client app for the OAuth2 flow through Google that works with zklinger2000/fcc-google-api on Github.",
   "engines": {
     "npm": ">=3"
   },
@@ -27,7 +27,7 @@
     "open:cover": "npm run test:cover && open coverage/index.html"
   },
   "author": "Zack Klinger",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "axios": "0.13.1",
     "classnames": "2.2.5",

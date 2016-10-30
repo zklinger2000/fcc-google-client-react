@@ -10,10 +10,9 @@ import {
 } from '../constants/actionTypes';
 // import  from '../../config';
 
-// TODO: Perfect opportunity to use 'loading...' UX's for slow AJAX calls from fcc-google-api server
 // TODO: Add heroku address
-// const API_URL = 'https://fcc-google-api.herokuapp.com/api';
-const API_URL = 'http://localhost:8050/api';
+const API_URL = 'https://fcc-google-api.herokuapp.com/api';
+// const API_URL = 'http://localhost:8050/api';
 
 export function authGoogleRequest() {
   return function(dispatch) {
@@ -64,7 +63,6 @@ export function authGoogleLogin(response) {
 }
 
 export function authError(error) {
-  console.warn('error', error);
   return {
     type: AUTH_GOOGLE_ERROR,
     payload: error
