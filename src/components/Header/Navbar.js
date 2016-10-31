@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import { Link, IndexLink } from 'react-router';
 import SigninButton from '../Auth/GoogleLoginButton';
-import classNames from 'classnames';
+import cx from 'classnames';
 
 const Navbar = (props) => {
   return (
@@ -18,16 +18,21 @@ const Navbar = (props) => {
           </button>
           <IndexLink to="/" className="navbar-brand" onClick={props.handleClickLink}>FCC Google Client | React</IndexLink>
         </div>
-        <div className={classNames({"collapse": props.collapse, "navbar-collapse": true, "collapsing": props.collapsing})} id="bs-example-navbar-collapse-1">
+        <div className={cx({"collapse": props.collapse, "navbar-collapse": true, "collapsing": props.collapsing})} id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav">
             <li
               className={props.pathname === 'home' ? 'active' : null}
               onClick={props.handleClickLink}>
               <IndexLink to="/">Home</IndexLink>
             </li>
+            <li
+              className={cx({"hidden": !props.authenticated, "active": props.pathname === "private"})}
+              onClick={props.handleClickLink}>
+              <IndexLink to="/private">Private</IndexLink>
+            </li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
-            <li className={classNames({"hidden": !props.authenticated, "hidden-xs": true})}>
+            <li className={cx({"hidden": !props.authenticated, "hidden-xs": true})}>
               <p className="navbar-text">{props.name}</p>
             </li>
             <li className={!props.authenticated ? "hidden" : null}>
