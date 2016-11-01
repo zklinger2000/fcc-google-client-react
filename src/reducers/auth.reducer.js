@@ -5,7 +5,8 @@ import {
   AUTH_GOOGLE_LOGOUT,
   AUTH_GOOGLE_ERROR,
   AUTH_GOOGLE_CANCEL,
-  AUTH_GOOGLE_FETCH_MESSAGE
+  AUTH_GOOGLE_RECEIVE_MESSAGE,
+  AUTH_GOOGLE_REQUEST_MESSAGE
 } from '../constants/actionTypes';
 
 export default function(state = initialState.auth, action) {
@@ -20,7 +21,7 @@ export default function(state = initialState.auth, action) {
       return { ...state, error: action.payload, message: null, isLoggingIn: false };
     case AUTH_GOOGLE_CANCEL:
       return { ...state, isLoggingIn: false };
-    case AUTH_GOOGLE_FETCH_MESSAGE:
+    case AUTH_GOOGLE_RECEIVE_MESSAGE:
       return { ...state, message: action.payload, error: null };
     default:
       return state;
